@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resume>
+  <name>Jane Doe</name>
+  <title>Front-end Developer</title>
+  <email>jane.doe@example.com</email>
+  <phone>+91 98765 43210</phone>
+  <address>123, Sample Street, City</address>
+  <profile>Enthusiastic front-end developer with 3 years experience building responsive UI.</profile>
+  <education>B.Sc. Computer Science · XYZ University · 2022</education>
+  <skills>HTML, CSS, JavaScript, React</skills>
+  <experience>ABC Corp · Frontend Developer · 2022-2024; Built main marketing website.</experience>
+</resume>

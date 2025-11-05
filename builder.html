@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resume Website — Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <h1>Resume Website</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="builder.html" class="nav-active">Builder</a>
+        <a href="preview.html">Preview</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Resume Builder</h2>
+      <form id="resumeForm">
+        <div class="two-col">
+          <label>
+            Full Name
+            <input id="name" name="name" type="text" required>
+          </label>
+          <label>
+            Job Title
+            <input id="title" name="title" type="text">
+          </label>
+        </div>
+
+        <div class="two-col">
+          <label>
+            Age
+            <input id="age" name="age" type="number" min="10" max="100">
+          </label>
+          <label>
+            Phone
+            <input id="phone" name="phone" type="text">
+          </label>
+        </div>
+
+        <div class="two-col">
+          <label>
+            Email
+            <input id="email" name="email" type="email">
+          </label>
+          <label>
+            Address
+            <input id="address" name="address" type="text">
+          </label>
+        </div>
+
+        <label>
+          Profile Summary
+          <textarea id="profile" rows="3"></textarea>
+        </label>
+
+        <label>
+          Education (12th)
+          <input id="education12" name="education12" type="text" placeholder="12th · School Name · Year · %">
+        </label>
+
+        <label>
+          Education (10th)
+          <input id="education10" name="education10" type="text" placeholder="10th · School Name · Year · %">
+        </label>
+
+        <label>
+          Skills (comma separated)
+          <input id="skills" name="skills" type="text" placeholder="HTML, CSS, JavaScript">
+        </label>
+
+        <label>
+          Project Title
+          <input id="projectTitle" name="projectTitle" type="text" placeholder="Employee Profile System">
+        </label>
+
+        <label>
+          Project Description
+          <textarea id="projectDesc" rows="3" placeholder="Brief about your project..."></textarea>
+        </label>
+
+        <label>
+          Experience
+          <textarea id="experience" rows="4" placeholder="Company · Role · Duration · Description"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button id="saveBtn" type="button" class="btn">Save & Preview</button>
+          <button id="clearBtn" type="button" class="btn ghost">Clear</button>
+          <a href="preview.html" class="btn ghost">Open Preview</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2025 Resume Website</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

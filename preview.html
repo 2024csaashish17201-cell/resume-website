@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resume Website — Preview</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <h1>Resume Website</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="builder.html">Builder</a>
+      <a href="preview.html" class="nav-active">Preview</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <div class="preview-actions">
+      <select id="templateSelect" class="btn ghost">
+        <option value="1">Template 1 (Classic)</option>
+        <option value="2">Template 2 (Modern)</option>
+        <option value="3">Template 3 (Elegant)</option>
+      </select>
+      <button id="editBtn" class="btn">Edit Again</button>
+      <button id="downloadPdfBtn" class="btn">Download PDF</button>
+      <button id="downloadXmlBtn" class="btn ghost">Download XML</button>
+    </div>
+    <div id="resumeWrap" class="resume-card"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">© 2025 Resume Website</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const data = loadResumeData();
+    renderPreview(data, 1);
+
+    const select = document.getElementById("templateSelect");
+    select.addEventListener("change", () => {
+      renderPreview(data, parseInt(select.value));
+    });
+
+    document.getElementById("editBtn").onclick = () => window.location.href = "builder.html";
+    document.getElementById("downloadXmlBtn").onclick = () => downloadXMLFile(data);
+    document.getElementById("downloadPdfBtn").onclick = async () => {
+      const { jsPDF } = window.jspdf;
+      const section = document.getElementById("resumeWrap");
+      const canvas = await html2canvas(section, { scale: 2 });
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+      const imgWidth = 190;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+      pdf.save("Resume.pdf");
+    };
+  });
+</script>
+</body>
+</html>

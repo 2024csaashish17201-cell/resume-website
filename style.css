@@ -1,0 +1,56 @@
+:root{
+  --accent: #1e90ff;
+  --muted: #6b7280;
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --shadow: 0 8px 30px rgba(15,23,42,0.08);
+  --radius: 12px;
+  --maxw: 980px;
+  --wrappad: 20px;
+  --mono: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:var(--mono);background:var(--bg);color:#111}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:var(--wrappad)}
+.topbar{background:linear-gradient(90deg,var(--accent),#00d4ff);color:#fff}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 20px}
+.topbar h1{font-size:18px;margin:0}
+.topbar nav a{color:#eaf6ff;margin-left:14px;text-decoration:none;padding:6px 10px;border-radius:8px}
+.topbar nav a.nav-active, .topbar nav a:hover{background:rgba(255,255,255,0.12)}
+
+.home .hero{padding:36px;text-align:center}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-top:22px}
+.hero-actions{margin-top:18px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;border:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(30,144,255,0.14)}
+.btn + .btn{margin-left:8px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+
+form label{display:block;margin-top:12px;color:#222;font-weight:600}
+input[type=text], input[type=email], textarea{
+  width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;margin-top:6px;font-size:15px;background:#fbfdff
+}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-actions{margin-top:16px}
+
+.preview-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;margin-bottom:12px}
+
+/* resume card style */
+.resume-card{padding:18px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#fbfdff);box-shadow:0 6px 24px rgba(15,23,42,0.06)}
+/* two column resume inside */
+.resume-inner{display:grid;grid-template-columns:32% 68%;gap:18px}
+.resume-left{background:#1f2937;color:#fff;padding:18px;border-radius:8px}
+.resume-left h3{margin-top:8px;font-size:13px;color:#e6eefc}
+.resume-left p{font-size:14px;margin:8px 0;color:#e6eefc}
+.resume-right h2{margin:0;font-size:24px;color:#111}
+.resume-right p{color:#333;margin:8px 0;line-height:1.5}
+.resume-right h4{margin-top:14px;color:var(--accent);font-size:16px}
+
+/* responsive */
+@media (max-width:900px){
+  .two-col{grid-template-columns:1fr}
+  .resume-inner{grid-template-columns:1fr}
+  .topbar .wrap{flex-direction:column;align-items:flex-start}
+  .topbar nav{margin-top:10px}
+}
